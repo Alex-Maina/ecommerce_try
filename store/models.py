@@ -7,7 +7,7 @@ class Promotion(models.Model):
     discount = models.FloatField()
     
     def __str__(self) -> str:
-        return self.title
+        return self.description
 
 
 #collection model
@@ -44,8 +44,9 @@ class Customer(models.Model):
     phone = models.CharField(max_length=255)
     birth_date = models.DateField(null=True)
     
+    
     def __str__(self) -> str:
-        return self.title
+        return self.first_name
 
 
 #Address model
