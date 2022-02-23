@@ -1,4 +1,4 @@
-
+from django.core.validators import MinValueValidator
 from django.db import models
 
 #promotion model
@@ -23,8 +23,11 @@ class Product(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField (default ='-')
     description = models.TextField()
-    price = models.DecimalField(max_digits=6, decimal_places=2)
-    inventory = models.IntegerField()
+    price = models.DecimalField(max_digits=6, 
+                                decimal_places=2, 
+                                validators=[MinValueValidator(0)]
+                                )
+    inventory = models.IntegerField(validators=[MinValueValidator(0)])
     last_updated = models.DateTimeField(auto_now=True)
     collection = models.ForeignKey(Collection, on_delete=models.PROTECT)
     promotions = models.ForeignKey(Promotion, on_delete=models.PROTECT, null=True, blank=True)
