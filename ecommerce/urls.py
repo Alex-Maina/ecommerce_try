@@ -22,5 +22,5 @@ admin.site.index_title = 'Admin'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('website.urls')),
+    path('', include('store.urls')),
 ]

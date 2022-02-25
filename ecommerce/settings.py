@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     
     
     #My Apps
-    'website.apps.WebsiteConfig',
     'store.apps.StoreConfig',
 ]
 

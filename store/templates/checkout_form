@@ -1,0 +1,9 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+<form action= "" method="POST>
+    <input type= "submit" name="submit">
+</form>
+
+{% endblock content %}
