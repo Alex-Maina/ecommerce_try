@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import * 
+from .forms import ProductForm
 
 # Create your views here.
 def index(request):
@@ -14,11 +15,7 @@ def store (request):
     return render(request, 'store.html', context)
 
 def checkout (request):
+    form = ProductForm
     
-    context ={}
+    context ={"form":form}
     return render(request, 'checkout.html', context)
-
-def buy (request):
-    
-    context ={}
-    return render(request, 'checkout_form.html', context)
